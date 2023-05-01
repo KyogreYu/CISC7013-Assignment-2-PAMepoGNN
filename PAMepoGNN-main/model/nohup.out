@@ -1,0 +1,29 @@
+(14, 47, 4)
+(512, 14, 47, 4)
+Data split: {'train': 384, 'validate': 64, 'test': 64}
+Data loader | train | input node features: torch.Size([384, 14, 47, 4]) |output: torch.Size([384, 14, 47, 1])
+Data loader | validate | input node features: torch.Size([64, 14, 47, 4]) |output: torch.Size([64, 14, 47, 1])
+Data loader | test | input node features: torch.Size([64, 14, 47, 4]) |output: torch.Size([64, 14, 47, 1])
+
+ 2023/04/29 02:12:41
+     MepoGNN model training begins:
+Traceback (most recent call last):
+  File "Main.py", line 263, in <module>
+    modes=['train', 'validate'])
+  File "Main.py", line 84, in train
+    y_pred = self.model(x_node.transpose(1, 3), x_SIR, x_od, self.max_od)
+  File "/root/anaconda3/envs/ywj/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/root/weijianyu/mepognn/PAMepoGNN-main/model/MepoGNN.py", line 256, in forward
+    param_b, param_g = self.stcell(x_node, g_dyn)
+  File "/root/anaconda3/envs/ywj/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/root/weijianyu/mepognn/PAMepoGNN-main/model/MepoGNN.py", line 150, in forward
+    gate = self.gate_convs[i](x)
+  File "/root/anaconda3/envs/ywj/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/root/anaconda3/envs/ywj/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 457, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/root/anaconda3/envs/ywj/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 454, in _conv_forward
+    self.padding, self.dilation, self.groups)
+KeyboardInterrupt
